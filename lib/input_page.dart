@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
 
-const bottomContainerHeight = 80.0;
+const double bottomContainerHeight = 80.0;
+const Color activeCardColor = Color(0xFF1D1E33);
+const Color bottomContainerColor = Color(0xFFEB1555);
 
 class InputPage extends StatefulWidget {
   @override
@@ -23,12 +25,12 @@ class _InputPageState extends State<InputPage> {
                 children: <Widget>[
                   Expanded(
                     child: ReusableCard(
-                      colour: Color(0xFF1D1E33),
+                      colour: activeCardColor,
                     ),
                   ),
                   Expanded(
                     child: ReusableCard(
-                      colour: Color(0xFF1D1E33),
+                      colour: activeCardColor,
                     ),
                   )
                 ],
@@ -36,7 +38,7 @@ class _InputPageState extends State<InputPage> {
             ),
             Expanded(
               child: ReusableCard(
-                colour: Color(0xFF1D1E33),
+                colour: activeCardColor,
               ),
             ),
             Expanded(
@@ -44,19 +46,19 @@ class _InputPageState extends State<InputPage> {
                 children: <Widget>[
                   Expanded(
                     child: ReusableCard(
-                      colour: Color(0xFF1D1E33),
+                      colour: activeCardColor,
                     ),
                   ),
                   Expanded(
                     child: ReusableCard(
-                      colour: Color(0xFF1D1E33),
+                      colour: activeCardColor,
                     ),
                   ),
                 ],
               ),
             ),
             Container(
-              color: Color(0xFFEB1555),
+              color: bottomContainerColor,
               margin: EdgeInsets.only(top: 15.0),
               width: double.infinity,
               height: bottomContainerHeight,
@@ -69,7 +71,7 @@ class _InputPageState extends State<InputPage> {
 class ReusableCard extends StatelessWidget {
   ReusableCard({@required this.colour});
 
-  Color colour;
+  final Color colour;
 
   @override
   Widget build(BuildContext context) {
