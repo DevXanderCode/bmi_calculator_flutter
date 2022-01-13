@@ -28,29 +28,25 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: ReusableCard(
                       colour: activeCardColor,
-                      cardChild: Column(
-                        children: <Widget>[
-                          Icon(
-                            FontAwesomeIcons.mars,
-                            size: 80.0,
-                          ),
-                          SizedBox(
-                            height: 15.0,
-                          ),
-                          Text(
-                            'Male',
-                            style: TextStyle(
-                              color: Color(0xFF8D8E98),
-                              fontSize: 18.0,
-                            ),
-                          ),
-                        ],
+                      cardChild: IconContent(
+                        icon: Icon(
+                          FontAwesomeIcons.mars,
+                          size: 80.0,
+                        ),
+                        text: "MALE",
                       ),
                     ),
                   ),
                   Expanded(
                     child: ReusableCard(
                       colour: activeCardColor,
+                      cardChild: IconContent(
+                        icon: Icon(
+                          FontAwesomeIcons.mars,
+                          size: 80.0,
+                        ),
+                        text: 'FEMALE',
+                      ),
                     ),
                   )
                 ],
@@ -85,6 +81,33 @@ class _InputPageState extends State<InputPage> {
             )
           ],
         ));
+  }
+}
+
+class IconContent extends StatelessWidget {
+  IconContent({@required this.icon, @required this.text});
+
+  final Icon icon;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        icon,
+        SizedBox(
+          height: 15.0,
+        ),
+        Text(
+          text,
+          style: TextStyle(
+            color: Color(0xFF8D8E98),
+            fontSize: 18.0,
+          ),
+        ),
+      ],
+    );
   }
 }
 
