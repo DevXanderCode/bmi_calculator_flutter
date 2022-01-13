@@ -1,6 +1,7 @@
 // import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'icon_content.dart';
 
 const double bottomContainerHeight = 80.0;
 const Color activeCardColor = Color(0xFF1D1E33);
@@ -30,7 +31,7 @@ class _InputPageState extends State<InputPage> {
                       colour: activeCardColor,
                       cardChild: IconContent(
                         icon: FontAwesomeIcons.mars,
-                        text: "MALE",
+                        label: "MALE",
                       ),
                     ),
                   ),
@@ -38,8 +39,8 @@ class _InputPageState extends State<InputPage> {
                     child: ReusableCard(
                       colour: activeCardColor,
                       cardChild: IconContent(
-                        icon: FontAwesomeIcons.mars,
-                        text: 'FEMALE',
+                        icon: FontAwesomeIcons.venus,
+                        label: 'FEMALE',
                       ),
                     ),
                   )
@@ -75,36 +76,6 @@ class _InputPageState extends State<InputPage> {
             )
           ],
         ));
-  }
-}
-
-class IconContent extends StatelessWidget {
-  IconContent({@required this.icon, @required this.text});
-
-  final IconData icon;
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Icon(
-          icon,
-          size: 80.0,
-        ),
-        SizedBox(
-          height: 15.0,
-        ),
-        Text(
-          text,
-          style: TextStyle(
-            color: Color(0xFF8D8E98),
-            fontSize: 18.0,
-          ),
-        ),
-      ],
-    );
   }
 }
 
