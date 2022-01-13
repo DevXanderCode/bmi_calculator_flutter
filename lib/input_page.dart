@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -29,10 +29,7 @@ class _InputPageState extends State<InputPage> {
                     child: ReusableCard(
                       colour: activeCardColor,
                       cardChild: IconContent(
-                        icon: Icon(
-                          FontAwesomeIcons.mars,
-                          size: 80.0,
-                        ),
+                        icon: FontAwesomeIcons.mars,
                         text: "MALE",
                       ),
                     ),
@@ -41,10 +38,7 @@ class _InputPageState extends State<InputPage> {
                     child: ReusableCard(
                       colour: activeCardColor,
                       cardChild: IconContent(
-                        icon: Icon(
-                          FontAwesomeIcons.mars,
-                          size: 80.0,
-                        ),
+                        icon: FontAwesomeIcons.mars,
                         text: 'FEMALE',
                       ),
                     ),
@@ -87,7 +81,7 @@ class _InputPageState extends State<InputPage> {
 class IconContent extends StatelessWidget {
   IconContent({@required this.icon, @required this.text});
 
-  final Icon icon;
+  final IconData icon;
   final String text;
 
   @override
@@ -95,7 +89,10 @@ class IconContent extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        icon,
+        Icon(
+          icon,
+          size: 80.0,
+        ),
         SizedBox(
           height: 15.0,
         ),
