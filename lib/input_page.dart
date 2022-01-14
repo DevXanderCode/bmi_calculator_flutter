@@ -1,5 +1,4 @@
-// import 'package:flutter/cupertino.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:bmi_calculator/bottom_button.dart';
 import "package:flutter/material.dart";
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_content.dart';
@@ -209,7 +208,8 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
             ),
-            GestureDetector(
+            BottomButton(
+              buttonTitle: 'CALCULATE',
               onTap: () {
                 Navigator.push(
                   context,
@@ -218,20 +218,7 @@ class _InputPageState extends State<InputPage> {
                   ),
                 );
               },
-              child: Container(
-                child: Center(
-                  child: Text(
-                    'CALCULATE',
-                    style: kLargeButtonTextStyle,
-                  ),
-                ),
-                color: kBottomContainerColor,
-                margin: EdgeInsets.only(top: 15.0),
-                // padding: EdgeInsets.only(bottom: 20.0),
-                width: double.infinity,
-                height: kBottomContainerHeight,
-              ),
-            )
+            ),
           ],
         ));
   }
