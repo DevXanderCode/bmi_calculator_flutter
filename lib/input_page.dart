@@ -1,4 +1,5 @@
 // import 'package:flutter/cupertino.dart';
+import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_content.dart';
@@ -137,18 +138,15 @@ class _InputPageState extends State<InputPage> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              RoundIconButton(),
+                              RoundIconButton(
+                                icon: FontAwesomeIcons.minus,
+                              ),
                               SizedBox(
                                 width: 10.0,
                               ),
-                              FloatingActionButton(
-                                backgroundColor: Color(0xFF4C4F5E),
-                                onPressed: () {},
-                                child: Icon(
-                                  Icons.add,
-                                  color: Colors?.white,
-                                ),
-                              )
+                              RoundIconButton(
+                                icon: FontAwesomeIcons.plus,
+                              ),
                             ],
                           )
                         ],
@@ -175,12 +173,20 @@ class _InputPageState extends State<InputPage> {
 }
 
 class RoundIconButton extends StatelessWidget {
+  RoundIconButton({this.icon});
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
       onPressed: () {},
+      child: Icon(icon),
+      elevation: 0.0,
       fillColor: Color(0xFF4C4D5E),
       shape: CircleBorder(),
+      constraints: BoxConstraints.tightFor(
+        width: 56.0,
+        height: 56.0,
+      ),
     );
   }
 }
