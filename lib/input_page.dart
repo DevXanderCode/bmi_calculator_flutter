@@ -17,7 +17,7 @@ class _InputPageState extends State<InputPage> {
   Gender selectedGender;
   int height = 180;
   int weight = 60;
-  int age = 30;
+  int age = 25;
 
   @override
   Widget build(BuildContext context) {
@@ -140,7 +140,7 @@ class _InputPageState extends State<InputPage> {
                             children: <Widget>[
                               RoundIconButton(
                                 icon: FontAwesomeIcons.minus,
-                                onPress: () {
+                                onPressed: () {
                                   setState(() {
                                     weight--;
                                   });
@@ -151,7 +151,7 @@ class _InputPageState extends State<InputPage> {
                               ),
                               RoundIconButton(
                                 icon: FontAwesomeIcons.plus,
-                                onPress: () {
+                                onPressed: () {
                                   setState(() {
                                     weight++;
                                   });
@@ -182,7 +182,7 @@ class _InputPageState extends State<InputPage> {
                             children: <Widget>[
                               RoundIconButton(
                                 icon: FontAwesomeIcons.minus,
-                                onPress: () {
+                                onPressed: () {
                                   setState(() {
                                     age--;
                                   });
@@ -193,7 +193,7 @@ class _InputPageState extends State<InputPage> {
                               ),
                               RoundIconButton(
                                 icon: FontAwesomeIcons.plus,
-                                onPress: () {
+                                onPressed: () {
                                   setState(() {
                                     age++;
                                   });
@@ -220,13 +220,13 @@ class _InputPageState extends State<InputPage> {
 }
 
 class RoundIconButton extends StatelessWidget {
-  RoundIconButton({this.icon, this.onPress});
+  RoundIconButton({@required this.icon, @required this.onPressed});
   final IconData icon;
-  final Function onPress;
+  final Function onPressed;
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
-      onPressed: onPress,
+      onPressed: onPressed,
       child: Icon(icon),
       elevation: 0.0,
       fillColor: Color(0xFF4C4D5E),
