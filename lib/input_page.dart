@@ -140,12 +140,22 @@ class _InputPageState extends State<InputPage> {
                             children: <Widget>[
                               RoundIconButton(
                                 icon: FontAwesomeIcons.minus,
+                                onPress: () {
+                                  setState(() {
+                                    weight--;
+                                  });
+                                },
                               ),
                               SizedBox(
                                 width: 10.0,
                               ),
                               RoundIconButton(
                                 icon: FontAwesomeIcons.plus,
+                                onPress: () {
+                                  setState(() {
+                                    weight++;
+                                  });
+                                },
                               ),
                             ],
                           )
@@ -173,12 +183,13 @@ class _InputPageState extends State<InputPage> {
 }
 
 class RoundIconButton extends StatelessWidget {
-  RoundIconButton({this.icon});
+  RoundIconButton({this.icon, this.onPress});
   final IconData icon;
+  final Function onPress;
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
-      onPressed: () {},
+      onPressed: onPress,
       child: Icon(icon),
       elevation: 0.0,
       fillColor: Color(0xFF4C4D5E),
