@@ -4,6 +4,14 @@ import '../components/reusable_card.dart';
 import '../components/bottom_button.dart';
 
 class ResultPage extends StatelessWidget {
+  ResultPage(
+      {@required this.bmiResult,
+      @required this.interpretation,
+      @required this.result});
+
+  final String bmiResult;
+  final String interpretation;
+  final String result;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,15 +41,15 @@ class ResultPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'Overweight',
+                    result,
                     style: kResultTextStyle,
                   ),
                   Text(
-                    '29.5',
+                    bmiResult,
                     style: kBMITextStyle,
                   ),
                   Text(
-                    'this is the overview of your body mass index after it is gotten from the data input',
+                    interpretation,
                     textAlign: TextAlign.center,
                     style: kBodyTextStyle,
                   ),
