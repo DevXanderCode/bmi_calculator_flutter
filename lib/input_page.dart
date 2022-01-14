@@ -34,7 +34,7 @@ class _InputPageState extends State<InputPage> {
                 children: <Widget>[
                   Expanded(
                     child: ReusableCard(
-                      handleTap: () {
+                      onPress: () {
                         setState(() {
                           selectedGender = Gender.male;
                         });
@@ -50,7 +50,7 @@ class _InputPageState extends State<InputPage> {
                   ),
                   Expanded(
                     child: ReusableCard(
-                      handleTap: () {
+                      onPress: () {
                         setState(() {
                           selectedGender = Gender.female;
                         });
